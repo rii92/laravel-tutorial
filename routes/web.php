@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\about;
+use App\Http\Controllers\welcome;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [welcome::class, 'index']);
+
+Route::get('/about', [about::class, 'index']);
+
+Route::get('/post', [PostController::class, 'index']);
